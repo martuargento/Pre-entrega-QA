@@ -25,7 +25,7 @@ def get_driver():
 
     # 4. Creamos el driver usando esas opciones
     service = Service(ChromeDriverManager().install())
-    driver = webdriver.Chrome(service=service)
+    driver = webdriver.Chrome(service=service, options=chrome_options)
 
     driver.implicitly_wait(5)
 
