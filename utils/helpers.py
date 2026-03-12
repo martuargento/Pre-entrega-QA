@@ -11,8 +11,13 @@ from selenium.webdriver.support import expected_conditions as EC
 URL = "https://www.saucedemo.com/"
 
 def get_driver():
-    #instalacion de driver
+    # 1. Configuramos las opciones para el robot de GitHub Actions
+    chrome_options = Options()
+    chrome_options.add_argument("--headless") 
+    chrome_options.add_argument("--no-sandbox")
+    chrome_options.add_argument("--disable-dev-shm-usage")
 
+    # 2. Creamos el driver usando esas opciones
     service = Service(ChromeDriverManager().install())
     driver = webdriver.Chrome(service=service)
 
