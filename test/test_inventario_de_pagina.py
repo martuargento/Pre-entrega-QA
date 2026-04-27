@@ -8,7 +8,7 @@ def test_inventario(driver):
     inventario = inventario_page(driver)
 
     login.navegar_a_url_login()
-    login.login()
+    login.login("standard_user", "secret_sauce")
 
     time.sleep(10)
 
